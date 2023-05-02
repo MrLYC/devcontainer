@@ -30,4 +30,5 @@ jobs:
           runCmd: "true"
       - shell: bash
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }} ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:$(date +%s)
+          docker push -a ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python
