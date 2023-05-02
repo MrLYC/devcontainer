@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:0-buster
+FROM mrlyc/devcontainer-base:buster
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG USER=vscode
