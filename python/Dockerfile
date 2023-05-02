@@ -22,4 +22,4 @@ RUN echo "done 0" \
     && pip install poetry==${POETRY_VERSION} \
     && echo "done 2"
 
-USER bk
+USER vscode
