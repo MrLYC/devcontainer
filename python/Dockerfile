@@ -1,7 +1,6 @@
 FROM mrlyc/devcontainer-base:buster
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG USER=vscode
 
 RUN DEBIAN_FRONTEND=$DEBIAN_FRONTEND \
     && apt-get clean all \
@@ -29,8 +28,7 @@ RUN DEBIAN_FRONTEND=$DEBIAN_FRONTEND \
     vim
 
 # Python and poetry installation
-USER $USER
-ARG HOME="/home/$USER"
+ARG HOME="/home/project"
 ARG PYTHON_VERSION=3.6
 ARG POETRY_VERSION=1.1.15
 
