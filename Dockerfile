@@ -35,13 +35,3 @@ ARG POETRY_VERSION=1.15
 
 ENV PYENV_ROOT="${HOME}/.pyenv"
 ENV PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${HOME}/.local/bin:$PATH"
-
-RUN echo "done 0" \
-    && curl https://pyenv.run | bash \
-    && echo "done 1" \
-    && pyenv install ${PYTHON_VERSION} \
-    && echo "done 2" \
-    && pyenv global ${PYTHON_VERSION} \
-    && echo "done 3" \
-    && pip install poetry==${POETRY_VERSION} \
-    && echo "done 4"
