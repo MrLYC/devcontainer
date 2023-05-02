@@ -1,4 +1,4 @@
-name: build_docker
+name: build_python
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: python
           push: true
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64,linux/arm64
