@@ -25,7 +25,7 @@ jobs:
       - name: Build and run dev container task
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
+          imageName: mrlyc/devcontainer-python:dev
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
