@@ -27,6 +27,7 @@ jobs:
         with:
           imageName: ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python
           imageTag: ${{ github.ref_name }}
+          runCmd: "true"
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
