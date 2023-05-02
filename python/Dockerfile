@@ -1,48 +1,18 @@
-FROM mrlyc/devcontainer-base:buster
+FROM mcr.microsoft.com/devcontainers/python:0-3.6-buster
 
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN DEBIAN_FRONTEND=$DEBIAN_FRONTEND \
-    && apt-get clean all \
     && apt-get update \ 
-    && apt-get install -y build-essential --no-install-recommends make \
-    ca-certificates \
-    git \
-    libssl-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    wget \
-    curl \
-    llvm \
-    libncurses5-dev \
-    xz-utils \
-    tk-dev \
-    libxml2-dev \
-    libxmlsec1-dev \
-    libffi-dev \
-    liblzma-dev \
+    && apt-get install -y build-essential --no-install-recommends \
     rustc \
-    zsh \
+    make \
     vim
 
-# Python and poetry installation
-ARG HOME="/home/project"
-ARG PYTHON_VERSION=3.6
 ARG POETRY_VERSION=1.1.15
 
-ENV PYENV_ROOT="${HOME}/.pyenv"
-ENV PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${HOME}/.local/bin:$PATH"
-
 RUN echo "done 0" \
-    && curl https://pyenv.run | bash \
-    && echo "done 1" \
-    && pyenv install ${PYTHON_VERSION} \
-    && echo "done 2" \
-    && pyenv global ${PYTHON_VERSION} \
-    && echo "done 3" \
     && pip install -U pip \
-    && echo "done 4" \
+    && echo "done 1" \
     && pip install poetry==${POETRY_VERSION} \
-    && echo "done 5"
+    && echo "done 2"
