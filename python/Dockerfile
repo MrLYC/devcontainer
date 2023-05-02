@@ -21,3 +21,5 @@ RUN echo "done 0" \
     && echo "done 1" \
     && pip install poetry==${POETRY_VERSION} \
     && echo "done 2"
+
+USER bk
