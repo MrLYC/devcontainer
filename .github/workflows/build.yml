@@ -25,12 +25,19 @@ jobs:
       - name: Build and run dev container task
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python
-          imageTag: ${{ github.ref_name }}
+          imageName: devcontainer
+          imageTag: stash
           runCmd: "true"
-      - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@v5
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v4
         with:
-          name: ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          context: .
+          build-args: |
+            "IMAGE=devcontainer:stash"
+          push: true
+          labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:latest
