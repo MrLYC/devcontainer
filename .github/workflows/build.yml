@@ -25,8 +25,7 @@ jobs:
       - name: Build and run dev container task
         uses: devcontainers/ci@v0.3
         with:
-          # Change this to be your CI task/script
-          runCmd: devcontainer build . --image-name ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
+          imageName: ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
