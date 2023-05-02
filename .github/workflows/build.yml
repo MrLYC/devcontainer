@@ -25,19 +25,9 @@ jobs:
       - name: Build and run dev container task
         uses: devcontainers/ci@v0.3
         with:
-          imageName: devcontainer
-          imageTag: stash
+          imageName: ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python
+          imageTag: ${{ github.ref_name }}
           runCmd: "true"
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          build-args: |
-            "IMAGE=devcontainer:stash"
-          push: true
-          labels: ${{ steps.meta.outputs.labels }}
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:latest
+      - shell: bash
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/devcontainer-python:${{ github.ref_name }}
