@@ -15,6 +15,14 @@ RUN DEBIAN_FRONTEND=$DEBIAN_FRONTEND \
     vim
 
 ARG POETRY_VERSION=1.1.15
+ARG USER vscode
+
+USER $USER
+ARG HOME="/home/$USER"
+ARG PYTHON_VERSION=3.6
+
+ENV PYENV_ROOT="${HOME}/.pyenv"
+ENV PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${HOME}/.local/bin:$PATH"
 
 RUN echo "done 0" \
     && pip install -U pip \
@@ -22,4 +30,3 @@ RUN echo "done 0" \
     && pip install poetry==${POETRY_VERSION} \
     && echo "done 2"
 
-USER vscode
