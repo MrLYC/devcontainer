@@ -24,6 +24,13 @@
         },
         "ghcr.io/devcontainers-contrib/features/npm-package:1"{
             "package": "commitizen"
-        }
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"moby": true,
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "v1"
+		}
     }
 }
