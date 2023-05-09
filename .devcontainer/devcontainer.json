@@ -31,9 +31,6 @@
             "installDockerBuildx": true,
             "version": "latest",
             "dockerDashComposeVersion": "v1"
-        },
-		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
-		"ghcr.io/devcontainers-contrib/features/mysql-homebrew:1": {},
-		"ghcr.io/devcontainers-contrib/features/redis-homebrew:1": {}
+        }
     }
 }
