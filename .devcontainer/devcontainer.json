@@ -26,11 +26,14 @@
             "package": "commitizen"
         },
         "ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"moby": true,
-			"azureDnsAutoDetection": true,
-			"installDockerBuildx": true,
-			"version": "latest",
-			"dockerDashComposeVersion": "v1"
-		}
+            "moby": true,
+            "azureDnsAutoDetection": true,
+            "installDockerBuildx": true,
+            "version": "latest",
+            "dockerDashComposeVersion": "v1"
+        },
+		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+		"ghcr.io/devcontainers-contrib/features/mysql-homebrew:1": {},
+		"ghcr.io/devcontainers-contrib/features/redis-homebrew:1": {}
     }
 }
