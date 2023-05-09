@@ -12,9 +12,7 @@ RUN DEBIAN_FRONTEND=$DEBIAN_FRONTEND \
     direnv \
     rustc \
     make \
-    vim \
-    redis-server \
-    mysql-server
+    vim
 
 ARG POETRY_VERSION=1.1.15
 ARG USER vscode
