@@ -22,7 +22,7 @@
             "version": "latest",
             "ppa": "false"
         },
-        "ghcr.io/devcontainers-contrib/features/npm-package:1"{
+        "ghcr.io/devcontainers-contrib/features/npm-package:1": {
             "package": "commitizen"
         },
         "ghcr.io/devcontainers/features/docker-in-docker:2": {
