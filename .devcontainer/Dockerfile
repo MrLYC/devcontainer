@@ -9,7 +9,6 @@ RUN DEBIAN_FRONTEND=$DEBIAN_FRONTEND \
     && apt-get clean all \
     && apt-get update \ 
     && apt-get install -y build-essential --no-install-recommends \
-    fonts-firacode \
     telnet \
     direnv \
     rustc \
