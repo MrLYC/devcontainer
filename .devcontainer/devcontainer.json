@@ -34,6 +34,7 @@
 		},
 		"ghcr.io/akhildevelops/devcontainer-features/pip:0": {
 			"PACKAGES": "mycli==1.25.0 iredis==1.12.2"
-		}
+		},
+		"ghcr.io/devcontainers-contrib/features/cz-cli:1": {}
 	}
 }
